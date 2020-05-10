@@ -23,6 +23,13 @@ will be in the target directory naturally.
 mvn clean package -DskipTests
 ```
 
+If you want to run the tests with the build if you supply the Application 
+and API keys on the command line like so.
+
+```
+mvn clean package -DargLine="-DappKey=c2978e...cd246d -DapiKey=0e613c...2389b7"
+```
+
 ### Using
 Once you have the connector setup for use in your project and have 
  a App/API keys you can create an instance of the connector and 
