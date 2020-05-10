@@ -36,6 +36,11 @@ public class DeviceInfo {
     private String location = "";
 
     /**
+     * A Coords object with the device location data.
+     */
+    private Coords coords;
+
+    /**
      * Default constructor.
      */
     public DeviceInfo() { }
@@ -54,5 +59,13 @@ public class DeviceInfo {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public Coords getCoords() {
+        return coords;
+    }
+
+    public void setCoords(Coords coords) {
+        this.coords = coords;
     }
 }
