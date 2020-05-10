@@ -13,7 +13,7 @@
 
     <groupId>com.lehman</groupId>
     <artifactId>ambient-weather-java</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <dependencies>
         <dependency>
