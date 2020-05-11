@@ -58,6 +58,8 @@ public class DataRecord extends BaseDataRecord {
         this.id = DigestUtils.sha256Hex(this.getDateutc().getTime() + this.deviceMac);
     }
 
+    public void setId(String Id) { this.id = Id; }
+
     public String getId() { return this.id; }
 
     public String getLoc() {
