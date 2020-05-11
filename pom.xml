@@ -9,6 +9,7 @@
         <maven.compiler.target>14</maven.compiler.target>
         <junit.version>4.13</junit.version>
         <jackson.version>2.11.0</jackson.version>
+        <commons.codec.version>1.14</commons.codec.version>
     </properties>
 
     <groupId>com.lehman</groupId>
@@ -31,6 +32,11 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${commons.codec.version}</version>
         </dependency>
     </dependencies>
 

@@ -187,6 +187,12 @@ public class AmbientWeather {
             throw new HttpStatusException(response.statusCode(), response.body());
         }
 
+        // Update all records with MAC address and ID.
+        for (DataRecord rec : records) {
+            rec.setDeviceMac(MacAddress);
+            rec.generateId();    // Must be called AFTER setting the MAC.
+        }
+
         return records;
     }
 }

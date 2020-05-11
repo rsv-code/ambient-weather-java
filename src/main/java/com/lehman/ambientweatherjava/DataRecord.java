@@ -16,6 +16,8 @@
 
 package com.lehman.ambientweatherjava;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 /**
  * DataRecord class holds the data record info returned from the
  * Ambient Weather queryDeviceData API call. The result JSON data is mapped
@@ -23,6 +25,18 @@ package com.lehman.ambientweatherjava;
  * of it's fields are defined there.
  */
 public class DataRecord extends BaseDataRecord {
+    /**
+     * A String with the ID of the device. This is created by
+     * calling setId() and will use a hash of the deviceMac
+     * and dateutc fields.
+     */
+    private String id = "";
+
+    /**
+     * A String with the device MAC address.
+     */
+    private String deviceMac = "";
+
     /**
      * A String with the data location the data came from. (ambient-prod-2020-19)
      */
@@ -33,11 +47,32 @@ public class DataRecord extends BaseDataRecord {
      */
     public DataRecord() { }
 
+    /**
+     * Generates the ID with a 256 hashed string containing the current
+     * time in milliseconds since epoch (dateutc field) and the
+     * deviceMac field. Note, the deviceMac needs to be manually
+     * set before calling this function, otherwise the hash will
+     * only include the date.
+     */
+    public void generateId() {
+        this.id = DigestUtils.sha256Hex(this.getDateutc().getTime() + this.deviceMac);
+    }
+
+    public String getId() { return this.id; }
+
     public String getLoc() {
         return loc;
     }
 
     public void setLoc(String loc) {
         this.loc = loc;
+    }
+
+    public String getDeviceMac() {
+        return deviceMac;
+    }
+
+    public void setDeviceMac(String deviceMac) {
+        this.deviceMac = deviceMac;
     }
 }
