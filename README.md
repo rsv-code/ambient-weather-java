@@ -5,6 +5,9 @@ that are returned from each call. Currently the API only supports two calls,
 listUsersDevices and queryDeviceData. These calls handle everything needed 
 to get a list of devices and query metrics.
 
+Are you looking for a pre-built logger you just configure? If so have a 
+look at [ambient-weather-logger](https://github.com/rsv-code/ambient-weather-logger).
+
 ### Requirements
 - Ambient Weather Application Key
 - Ambient Weather API Key
